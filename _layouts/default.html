@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+{% include header.html %}
+
+<body>
+ 
+
+
+
+
+<div class="container">
+	 <div id="header">{% include nav.html %}</div>
+	
+	<div class="row">
+		<div class="col-md-9">
+			{{ content }}
+		</div>
+		
+		<div class="col-md-3">
+			<div class="data_list">
+				<div class="data_list_title">
+					<img src="/assets/img/module/default/user_icon.png"/>
+					博主信息
+				</div>
+				<div class="user_image">
+					<img src="/assets/img/module/default/author.jpg"/>
+				</div>
+				<div class="nickName">Java1234_小锋</div>
+				<div class="userSign">(知识改变命运，技术改变世界)</div>
+			</div>
+			
+			<div class="data_list">
+				<div class="data_list_title">
+					<img src="/assets/img/module/default/byType_icon.png"/>
+					按日志类别
+				</div>
+				<div class="datas">
+					<ul>
+						{% for category in site.categories %}
+							<li><span><a href="{{ site.baseurl}}/category/{{ category.first }}.html">{{ category | first }}（{{ category | last | size }}）</a></span></li>
+						{% endfor %}
+					</ul>
+				</div>
+			</div>
+			
+			<div class="data_list">
+				<div class="data_list_title">
+					<img src="/assets/img/module/default/byDate_icon.png"/>
+					按日志日期
+				</div>
+				<div class="datas">
+					<ul>
+						<c:forEach var="blogCount" items="${blogCountList }">
+							<li><span><a href="${pageContext.request.contextPath}/index.html?releaseDateStr=${blogCount.releaseDateStr }">${blogCount.releaseDateStr }(${blogCount.blogCount })</a></span></li>
+						</c:forEach>
+					</ul>
+				</div>
+			</div>
+			
+			<div class="data_list">
+				<div class="data_list_title">
+					<img src="/assets/img/module/default/link_icon.png"/>
+					友情链接
+				</div>
+				<div class="datas">
+					<ul>
+						<li><span><a href="http://blog.java1234.com/index.html" target="_blank">Java开源博客系统</a></span></li>
+					</ul>
+				</div>
+			</div>
+			
+		</div>
+		
+		
+	</div>
+	
+	{% include foot.html %}
+</div>
+
+
+</body>
+
+</html>

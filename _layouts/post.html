@@ -1,0 +1,24 @@
+---
+ layout: default
+---
+<div class="data_list">
+    <div class="data_list_title">
+        <img src="/assets/img/module/default/blog_show_icon.png" />
+        <span>博客信息</span>
+    </div>
+    <div style="padding: 30px">
+        <div class="blog_title">
+            <h3><strong>{{ page.title }}</strong></h3></div>
+        <div class="blog_info">发布时间：『 {{ page.date | date: "%F" }} 』&nbsp;&nbsp;博客类别：{{ page.tags }} &nbsp;&nbsp;阅读(0) </div>
+        {{ content }}
+        <!-- <div >{{ content }}<div> -->
+    </div>
+    <div class="blog_lastAndNextPage">
+    	 {% if page.next.url %}
+        <p>上一篇：<a href={{ page.next.url }}>{{ page.next.title }}</a></p>
+        {% endif %} 
+    	{% if page.previous.url %} 
+        <p>下一篇：<a href={{ page.previous.url }}>{{ page.previous.title }}</a></p>
+        {% endif %}
+    </div>
+</div>
