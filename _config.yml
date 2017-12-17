@@ -19,3 +19,9 @@ paginate_path: "blog/page:num/"
 
 
 
+deploy:
+  type: git
+  repo:
+    github: https://github.com/wefashe/wefashe.github.io.git
+    gitee: https://gitee.com/wefashe/wefashe.git
+  bransh: master
