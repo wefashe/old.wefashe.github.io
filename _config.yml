@@ -10,11 +10,11 @@ markdown: kramdown
 theme: minima
 plugins:
   - jekyll-feed
+safe: false
 
-
-permalink: /:year/:month/:day/:title.html
+permalink:  date
 gems: ['jekyll-paginate']
-paginate: 150
+paginate: 8
 paginate_path: "blog/page:num/"
 
 
