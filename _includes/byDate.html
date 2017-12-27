@@ -1,0 +1,22 @@
+<div class="data_list">
+    <div class="data_list_title">
+        <img src="/assets/img/module/default/byDate_icon.png" /> 按日志日期
+    </div>
+    <div class="datas">
+        <ul>
+            {% assign precount = 0 %} 
+            {% capture postcount %} {% increment postcount1 %} {% endcapture %} 
+            {% for post in site.posts %} 
+            	{% capture month %}{{ post.date | date: '%m%Y' }}{% endcapture %}
+            	{% capture nmonth %}{{ post.next.date | date: '%m%Y' }}{% endcapture %} 
+            	{% capture postcount %}{% increment postcount1 %}{% endcapture %} 
+
+            	{% if month != nmonth %} 
+            	  {% capture curcount %}{{postcount1 | minus: precount}}{% endcapture %}
+            <li><span><a href="#"> {{ post.date | date: '%Y年%m月' }} ({{curcount}})</a></span></li>
+            	  {% assign precount = postcount1 %} 
+            	{% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+</div>

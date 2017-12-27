@@ -1,0 +1,12 @@
+<div class="data_list">
+    <div class="data_list_title">
+        <img src="/assets/img/module/default/byType_icon.png" /> 按日志类别
+    </div>
+    <div class="datas">
+        <ul>
+           {% for tag in site.tags %}
+            <li><span><a href="#">{{ tag[0] }} ( {{ tag | last | size }} )</a></span></li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
