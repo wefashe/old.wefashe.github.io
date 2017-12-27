@@ -9,7 +9,7 @@
     <div style="padding: 30px">
         <div class="blog_title">
             <h3><strong>{{ page.title }}</strong></h3></div>
-        <div class="blog_info">发布时间：『 {{ page.date | date: "%F" }} 』&nbsp;&nbsp;博客类别：{{ page.tags }} &nbsp;&nbsp;阅读(0) </div>
+        <div class="blog_info">发布时间：『 {{ page.date | date: "%F" }} 』&nbsp;&nbsp;博客类别：{{ page.tags }} &nbsp;&nbsp;阅读(<span data-hk-page="current"> - </span>) </div>
         {{ content }}
         <!-- <div >{{ content }}<div> -->
     </div>

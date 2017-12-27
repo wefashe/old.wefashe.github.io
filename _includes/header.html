@@ -6,7 +6,30 @@
     <link rel="bookmark" type="image/x-icon" href="/assets/img/favicon.ico" />
     <link rel="stylesheet" type="text/css" href="/assets/lib/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/assets/module/default/default.css">
-  <!--   <script type="text/javascript" src="/assets/lib/require/require.min.js" defer async="true"></script>
-    <script type="text/javascript" src="/assets/module/require.config.js" defer async="true"></script>
-    <script type="text/javascript" src="/assets/module/default/dafault.js" defer async="true"></script> -->
+    <!-- <script type="text/javascript" src="/assets/lib/require/require.min.js" defer async="true"></script> -->
+    <!-- <script type="text/javascript" src="/assets/module/require.config.js" defer async="true"></script> -->
+    <script src="https://cdn1.lncld.net/static/js/av-mini-0.6.10.js" defer async="true"></script>
+    <script src="http://jerry-cdn.b0.upaiyun.com/hit-kounter/hit-kounter-lc-0.2.0.js" defer async="true"></script>
+    <!-- <script type="text/javascript" src="/assets/module/default/dafault.js" defer async="true"></script> -->
+    <script type="text/javascript" defer async="true">
+    Icarus.request({
+        api: 'hk.page.get',
+        v: '1.0',
+        data: {
+            pages: [
+                { url: 'http://test.com/1' },
+                { url: 'http://test.com/2' },
+                { url: 'http://test.com/3' }
+            ]
+        },
+        success: function(results) {
+            for (var i = 0; i < results.length; i++) {
+                console.log(results[i].domain, results[i].url, results[i].count);
+            }
+        },
+        failure: function(code, err) {
+            console.log(code, err);
+        }
+    });
+    </script>
 </head>

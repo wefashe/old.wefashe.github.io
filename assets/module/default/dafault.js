@@ -1,17 +1,23 @@
 require(['jquery', 'knockout', 'bootstrap'], function($, ko) {
 
 
-
+    function getCount() {
+        Icarus.request({
+            api: 'hk.page.get',
+            v: '1.0',
+            data: { // <---
+                pages: [ // <---
+                    { url: 'http://test.com/1' } // <---
+                ] // <---
+            }, // <---
+            success: function(results) {},
+            failure: function(code, err) {}
+        });
+    }
 
 
     function init() {
-        $(".pagination li").click(function() {
-
-            $(this).siblings('li').removeClass('active'); // 删除其他兄弟元素的样式
-
-            $(this).addClass('active'); // 添加当前元素的样式
-
-        });
+        getCount()；
     };
 
     init();
