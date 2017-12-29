@@ -2,7 +2,7 @@ title: 海心漩
 email: wefashe@qq.com
 description: 我的个人小站；
 baseurl:
-url: "http://localhost:4000/"
+url: "http://localhost:4000"
 
 
 
@@ -17,6 +17,12 @@ plugins: ['jekyll-paginate']
 paginate: 10
 ## paginate_path: "blog/page:num/"
 paginate_path: "p/:num"
+
+
+leancloud:
+  enable: true
+  app_id: FL9CNp1luHvcsY8iA0oim5qj-gzGzoHsz
+  app_key: GBV7UfsAl4nm4kgQACl9y9Eb
 
 
 deploy:

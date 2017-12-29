@@ -13,7 +13,7 @@ layout: default
             <li style="margin-bottom: 30px">
                 <span class="title"><a href={{ post.url }}>{{ post.title }}</a></span>
                 <span class="summary">摘要: {{ post.content | strip_html | strip_newlines | truncate: 250 }}&hellip;</span>
-                <span class="info">发表于 {{ post.date | date: "%F"}} 阅读(<span data-hk-page="{{ post.url }}"> - </span>) 评论(0) </span>
+                <span class="info">发表于 {{ post.date | date: "%F"}} 阅读(<span class="visitor-count" id="{{ post.url }}">0<span>) 评论(0) </span>
             </li>
             <hr style="height:5px;border:none;border-top:1px dashed gray;padding-bottom:  10px;" /> 
             {% endfor %}
