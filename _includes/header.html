@@ -18,9 +18,9 @@
     AV.initialize("{{site.leancloud.app_id}}", "{{site.leancloud.app_key}}");
     </script>
     <script>
-         $(window).load(function() {
+        /* $(window).load(function() {
                 $("#loading").show();
-            })
+            })*/
     function showHitCount(Counter) {
         var query = new AV.Query(Counter);
         var articles = [];
@@ -40,8 +40,7 @@
                     var item = results[i];
                     var url = item.get('url');
                     var hits = item.get('hits');
-                    var $element = $(document.getElementById(url));
-                    $element.text(hits);
+                    $(document.getElementById(url)).text(hits);
                 }
             })
             .fail(function(object, error) {
@@ -61,8 +60,7 @@
                     counter.increment("hits");
                     counter.save({
                         success: function(counter) {
-                            var $element = $(document.getElementById(url));
-                            $element.text(counter.get('hits'));
+                             $(document.getElementById(url)).text(counter.get('hits'));
                         },
                         error: function(counter, error) {
                             console.log('Failed to save Visitor num, with error message: ' + error.message);
@@ -80,7 +78,7 @@
                     newcounter.set("hits", 1);
                     newcounter.save(null, {
                         success: function(newcounter) {
-                            $("#"+url).text(newcounter.get('hits'));
+                             $(document.getElementById(url)).text(newcounter.get('hits'));
                         },
                         error: function(newcounter, error) {
                             console.log('Failed to create');
